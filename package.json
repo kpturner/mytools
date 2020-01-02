@@ -1,0 +1,43 @@
+{
+  "name": "mytools",
+  "version": "1.0.0",
+  "description": "My tools",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint -c ./tslint.json -p ./tsconfig.json",
+    "lint:fix": "npx tslint -c ./tslint.json --fix -p ./tsconfig.json",
+    "build": "npm run lint && ./node_modules/.bin/tsc -p ./tsconfig.json",
+    "start": "npm run build && npm run test && NODE_ENV=localhost node index.js --path '/Volumes/media/pictures/2016-11 to 2019-12'",
+    "debug": "npm run build && npm run test && node --inspect index.js --path '/Volumes/media/pictures/2016-11 to 2019-12'",
+    "test": "npm run -s build && npm run test:unit",
+    "test:unit": "NODE_ENV=test npx mocha --exit './test/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpturner/mytools.git"
+  },
+  "author": "Kevin Turner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kpturner/mytools/issues"
+  },
+  "homepage": "https://github.com/kpturner/mytools#readme",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.0.2",
+    "config": "^1.21.0",
+    "fs-extra": "^8.1.0",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.22",
+    "mocha": "^5.2.0",
+    "must": "^0.13.4",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^3.5.1"
+  }
+}

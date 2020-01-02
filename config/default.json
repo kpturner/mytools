@@ -1,0 +1,6 @@
+{
+    "log": {
+        "name": "my-tools",
+        "level": "debug"
+    }
+}
